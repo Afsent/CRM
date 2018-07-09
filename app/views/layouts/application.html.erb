@@ -9,6 +9,8 @@
   </head>
 
   <body>
-    <%= yield %>
+  <%= render "shared/navbar" %>
+  <%= render "shared/flash", flash: flash %>
+  <%= yield %>
   </body>
 </html>
