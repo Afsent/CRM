@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'order/new'
+
   devise_for :users
 
   get 'users/show'
