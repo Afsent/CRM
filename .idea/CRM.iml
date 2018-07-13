@@ -50,6 +50,7 @@
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.0.5, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.4, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v4.4.3, ruby-2.4.3-p205) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="devise-bootstrapped (v0.2.0@02e525, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.7.1, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.7.0, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.25, ruby-2.4.3-p205) [gem]" level="application" />

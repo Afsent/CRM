@@ -18,15 +18,10 @@
         <%= "Привет, " %> <%= current_user.email %>
       </li>
 
-      <% if current_user.admin? %>
-        <li class="nav-item">
-          <%= link_to "Заведение", admin_home_url, :class => 'nav-link' %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Профиль", current_user, :class => 'nav-link' %>
-        </li>
-      <% end %>
+
+      <li class="nav-item">
+        <%= link_to "Профиль", users_show_path, :class => 'nav-link' %>
+      </li>
 
       <li class="nav-item">
         <%= link_to "Выход", destroy_user_session_path, method: :delete, :class => 'nav-link' %>
