@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="ruby-2.4.3-p205 (1)" project-jdk-type="RUBY_SDK" />
+=======
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="ruby-2.4.3-p205" project-jdk-type="RUBY_SDK" />
+>>>>>>> ac7a9c434ea1d1e168e6d45591e3864d176d0e6d
 </project>
