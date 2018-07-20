@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180709191548) do
+ActiveRecord::Schema.define(version: 20180716110722) do
+
+  create_table "orders", force: :cascade do |t|
+    t.text "fullName"
+    t.text "job"
+    t.string "nameArticle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "full_name"
+    t.string "article_name"
+    t.text "annotation"
+    t.string "key_words"
+    t.string "filename"
+    t.string "content_type"
+    t.binary "file_contents"
+    t.string "phone"
+    t.text "comment"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
