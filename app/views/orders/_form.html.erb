@@ -12,13 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :order_user_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :full_name %>
-    <%= form.text_area :full_ame, id: :order_full_name %>
+    <%= form.text_area :full_name, id: :order_full_name %>
   </div>
 
   <div class="field">
@@ -39,6 +34,11 @@
   <div class="field">
     <%= form.label :key_words %>
     <%= form.text_field :key_words, id: :order_key_words %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filename %>
+    <%= form.file_field :filename, id: :order_filename %>
   </div>
 
   <div class="actions">

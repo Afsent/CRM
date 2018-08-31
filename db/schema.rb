@@ -10,12 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180716110722) do
+ActiveRecord::Schema.define(version: 20180827174607) do
 
   create_table "orders", force: :cascade do |t|
-    t.text "fullName"
     t.text "job"
-    t.string "nameArticle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "full_name"
@@ -31,6 +29,24 @@ ActiveRecord::Schema.define(version: 20180716110722) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.integer "user_id"
+    t.boolean "author", default: true
+    t.boolean "admin"
+    t.boolean "chef_moderator"
+    t.boolean "moderator"
+    t.boolean "analyst"
+    t.boolean "head"
+    t.boolean "consultant"
+    t.boolean "director"
+    t.boolean "editor"
+    t.boolean "chef_translator"
+    t.boolean "translator"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_roles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -44,6 +60,11 @@ ActiveRecord::Schema.define(version: 20180716110722) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "full_name"
+    t.string "faculty"
+    t.string "caf"
+    t.string "position"
+    t.string "tel_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -14,6 +14,9 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    if !signed_in? == true
+      redirect_to users_show_path, :flash => { :error => "Вы не можете оставить заявку." } and return
+    end
     @order = Order.new
   end
 
@@ -25,10 +28,11 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.user_id = current_user.id
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to @order, notice: 'Заявка сделана.' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -42,13 +46,14 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order, notice: 'Заявка обнолена.' }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /orders/1
@@ -56,7 +61,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to orders_url, notice: 'Заявка удалена.' }
       format.json { head :no_content }
     end
   end
