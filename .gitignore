@@ -21,9 +21,4 @@
 /yarn-error.log
 
 .byebug_history
-.idea/.generators
-.idea/.generators
-.idea/CRM.iml
-.idea/.generators
-.idea/misc.xml
-.idea/workspace.xml
+.idea/
