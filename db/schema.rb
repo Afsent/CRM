@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180827174607) do
+ActiveRecord::Schema.define(version: 20180910182301) do
 
   create_table "orders", force: :cascade do |t|
     t.text "job"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180827174607) do
     t.string "key_words"
     t.string "filename"
     t.string "content_type"
-    t.binary "file_contents"
+    t.string "file_contents"
     t.string "phone"
     t.text "comment"
     t.integer "user_id"

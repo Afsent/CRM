@@ -66,14 +66,22 @@ class OrdersController < ApplicationController
     end
   end
 
+  def download
+    send_file(
+        "#{Rails.root}"+@order.file_contents,
+        filename: @order.id+@order.updated_at+@order.file_contents,
+        type: "application"
+    )
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      @order = Order.find(current_user.id)
+      @order = Order.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:user_id, :full_name, :job, :article_name, :annotation, :key_words)
+      params.require(:order).permit(:user_id, :full_name, :job, :article_name, :annotation, :key_words, :file_contents, :filename)
     end
 end

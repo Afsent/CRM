@@ -30,5 +30,11 @@
   <%= @order.key_words %>
 </p>
 
+<p>
+  <strong>File</strong>
+  <%= link_to 'Download', download_order_path %>
+  <%= @order.file_contents %>
+</p>
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

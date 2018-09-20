@@ -1,0 +1,75 @@
+<table>
+  <thead>
+  <tr>
+    <th>ФИО</th>
+    <th>Почта</th>
+    <th>Телефон</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.full_name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.tel_number %></td>
+
+      <td><%= link_to 'Show', users_show_path %></td>
+      <td><%= link_to 'Edit', edit_role_path(user) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= form_with(model: @role, local: true) do |form| %>
+  <%= form.fields_for :role do |role| %>
+    <div class="field">
+      <%= form.label 'Автор' %>
+      <%= role.check_box :author %>
+    </div>
+    <div class="field">
+      <%= form.label 'Администратор' %>
+      <%= role.check_box :admin %>
+    </div>
+    <div class="field">
+      <%= form.label 'Шеф-модератор' %>
+      <%= role.check_box :chef_moderator %>
+    </div>
+    <div class="field">
+      <%= form.label 'Модератор' %>
+      <%= role.check_box :moderator %>
+    </div>
+    <div class="field">
+      <%= form.label 'Аналитик' %>
+      <%= role.check_box :analyst %>
+    </div>
+    <div class="field">
+      <%= form.label 'Руководитель' %>
+      <%= role.check_box :head %>
+    </div>
+    <div class="field">
+      <%= form.label 'Консультант' %>
+      <%= role.check_box :consultant %>
+    </div>
+    <div class="field">
+      <%= form.label 'Директор' %>
+      <%= role.check_box :director %>
+    </div>
+    <div class="field">
+      <%= form.label 'Редактор' %>
+      <%= role.check_box :editor %>
+    </div>
+    <div class="field">
+      <%= form.label 'Шеф-переводчик' %>
+      <%= role.check_box :chef_translator %>
+    </div>
+    <div class="field">
+      <%= form.label 'Переводчик' %>
+      <%= role.check_box :translator %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= form.submit "Готово" %>
+  </div>
+<% end %>

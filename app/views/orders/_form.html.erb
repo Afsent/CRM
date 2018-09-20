@@ -41,7 +41,14 @@
     <%= form.file_field :filename, id: :order_filename %>
   </div>
 
+  <div class="field">
+    <%= form.label :file_contents %>
+    <%= form.file_field :file_contents, id: :order_file_contents %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  file_contents
 <% end %>

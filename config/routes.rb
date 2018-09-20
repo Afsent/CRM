@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  resources :roles
   resources :orders
   get 'order/new'
 
-  devise_for :users
+
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   get 'users/show'
   get 'main/welcome'
+  get 'admin/users'
 
 
   root :to => 'main#welcome'
