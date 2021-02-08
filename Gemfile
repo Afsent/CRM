@@ -54,4 +54,4 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
 gem "paperclip", "~> 5.1"
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
